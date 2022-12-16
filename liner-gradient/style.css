@@ -1,0 +1,124 @@
+/* declare variables in root (html tag) */
+:root{
+    --green: #00d959;
+    --black: #1d1d1f;
+}
+
+/* Apply styles to all elements */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* These are just settings */
+body{
+    height: auto;
+    width: 100vw;
+    background-color: cadetblue;
+    font-family: SF Pro Display,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+   
+}
+
+.div{
+  width: 400px;
+  height: 100px;
+  margin-bottom: 100px;
+}
+
+.div-container {
+  width: 100vw;
+  display: flex;
+  justify-content:space-around;
+  align-items: center;
+  flex-direction: column;
+}
+
+.text{
+  width: auto;
+  font-size:60px;
+  background-size: 200%;
+  background-image: linear-gradient(90deg,var(--black) 50%,var(--green)50% 100%);
+  /* Chrome is both webkit and mozilla firebox based web browser.*/
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: changeColor 3s infinite linear;
+}
+
+.charo{
+  width: auto;
+  font-size:60px;
+  background-size: 200%;
+  background-image: linear-gradient(90deg,var(--black) 50%,var(--green)50% 100%);
+  /* Chrome is both webkit and mozilla firebox based web browser.*/
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+@keyframes changeColor{
+  from {
+    background-position:200% center;
+  }
+  to {
+    background-position:0% center ;
+  }
+}
+@keyframes changeColorBottom{
+  from {
+    background-position:200% center;
+  }
+  to {
+    background-position:100% center ;
+  }
+}
+
+/* Linear-gradient
+To create a linear gradient you must define at least two color stops.
+Color stops are the colors you want to render smooth transitions among.
+You can also set a starting point and a direction (or an angle) along
+with the gradient effect.
+
+background-image: linear-gradient(direction or angle, color-stop1, color-stop2, ...);
+
+*/
+
+.div1 {
+  /* By default, direction is 180deg */
+  background: linear-gradient( #00d959,white);
+}
+
+
+
+.div2{
+  /* From left to right */
+  background-image:  linear-gradient(to right, #00d959,white);
+}
+
+.div3{
+  background: linear-gradient(to bottom right, #00d959, white);
+}
+
+.div4{
+  background: linear-gradient( 270deg, #00d959, white);
+}
+
+.div5{
+  background: linear-gradient( 90deg, #00d959, white, red, blue);
+}
+
+.div6{
+  /* two percentages are used to specify the start and the end of the color.  */
+  background: repeating-linear-gradient(90deg,#002654 0 10%, white 10% 20%, #ED2939 20% 30%); 
+}
+
+.div7{
+  background: radial-gradient(blue, white);
+}
+
+.div8{
+  background: repeating-linear-gradient(135deg, transparent, transparent 10px, blue 10px, blue 20px),
+  repeating-linear-gradient(45deg, transparent, transparent 10px, red 10px, red 20px);
+  /* The background-blend-mode CSS property sets how an element's background images should blend
+   with each other and with the element's background color. */
+  background-blend-mode: lighten;
+}
